@@ -1,27 +1,8 @@
 <template>
 
   <div class="sign-up">
-    <h1>Registro</h1>
-    <v-form v-model="valid" ref="form" lazy-validation>
-      <v-text-field v-model="email" :rules="emailRules" label="Email Address" required></v-text-field>
-      <v-text-field v-model="username" label="Phone Number" required></v-text-field>
-      <v-text-field v-model="name" label="Nombre" required></v-text-field>
-      <v-text-field v-model="middle_name" label="Apellido" required></v-text-field>
-      <v-text-field
-        v-model="password"
-        :append-icon="passwordVisible ? 'visibility' : 'visibility_off'"
-        :rules="[passwordRules.required, passwordRules.min]"
-        :type="passwordVisible ? 'text' : 'password'"
-        name="password"
-        label="Password"
-        hint="At least 8 characters"
-        counter
-        @click:append="passwordVisible = !passwordVisible"
-        required></v-text-field>
-      <v-btn :disabled="!valid" @click="submit()">Submit</v-btn>
-        
-    </v-form>
-    <h1>Confirmación</h1>
+    
+    <h1>Confirm</h1>
     <v-form v-model="valid" ref="formulario" lazy-validation>
       <v-text-field v-model="username" label="Phone Number" required></v-text-field>
       <v-text-field v-model="code" :rules="codeRules" label="Code" required/>
@@ -34,8 +15,9 @@
 <script>
 import Countries from '@/api/country';
 import { Auth } from 'aws-amplify';
-import {signUp} from '@/src/utils/auth.js' // Adding this line 
+import {signUp} from '@/src/utils/auth.js'; // Adding this line 
 import {confirmSignUp, resendSignUp} from '@/src/utils/auth.js';  // Adding this line
+
 
 export default {
   //change parameters shits handsome ;)
@@ -82,7 +64,7 @@ export default {
       }
     },
     submitcode() {
-      if (this.$refs.form.validate()) {
+      if (this.$refs.formulario.validate()) {
         console.log(`CONFIRM username: ${this.username}, code: ${this.code}`);
         confirmSignUp(this.username, this.code);  // Adding this line as well
       }

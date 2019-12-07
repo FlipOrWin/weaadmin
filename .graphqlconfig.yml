@@ -1,0 +1,18 @@
+projects:
+  jaimeappsync-develop:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        region: us-west-2
+        apiId: jemd5ulc3vdtrilni6dib4or24
+        maxDepth: 2
+extensions:
+  amplify:
+    version: 3

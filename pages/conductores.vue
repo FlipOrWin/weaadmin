@@ -11,7 +11,6 @@
 </template>
 
 <script>
-  import API from '@/api';
   import EChart from '@/components/chart/echart';
   import MiniStatistic from '@/components/widgets/statistic/MiniStatistic';
   import PostListCard from '@/components/widgets/card/PostListCard';
@@ -28,7 +27,15 @@
   import CircleStatistic from '@/components/widgets/statistic/CircleStatistic';
   import LinearStatistic from '@/components/widgets/statistic/LinearStatistic';
 
+
+  import Amplify, { API, graphqlOperation } from 'aws-amplify';
+  import * as queries from '@/src/graphql/queries'; 
+
+
+  
+
   export default {
+
     layout: 'dashboard',
     components: {
       VWidget,
@@ -138,20 +145,26 @@
         },
       ]
     }),
-    computed: {
-      activity () {
-        return API.getActivity();
-      },
-      posts () {
-        return API.getPost(3);
-      },
-      siteTrafficData () {
-        return API.getMonthVisit;
-      },
-      locationData () {
-        return API.getLocation;
-      }
-    },
+    created(){
+      const allTodos = API.graphql(graphqlOperation(queries.listBlogs, {
+          filter: {
+              status: {
+                  _typename: "Blog"
+              }
+          }
+      }));
 
+      console.log(allTodos);
+      
+      console.log(allTodos.listBlogs);
+      console.log("Hola"); 
+    }
+    
+    
+ 
   };
+ 
+  // Simple query
+  
+  
 </script>

@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"jaimechoferes": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+    "developm": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-bootcamp-jaimeadmin-developm-162756-authRole",
+            "UnauthRoleArn": "arn:aws:iam::805495149875:role/amplify-bootcamp-jaimeadmin-developm-162756-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::805495149875:role/amplify-bootcamp-jaimeadmin-developm-162756-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-bootcamp-jaimeadmin-developm-162756-deployment",
+            "UnauthRoleName": "amplify-bootcamp-jaimeadmin-developm-162756-unauthRole",
+            "StackName": "amplify-bootcamp-jaimeadmin-developm-162756",
+            "StackId": "arn:aws:cloudformation:us-west-2:805495149875:stack/amplify-bootcamp-jaimeadmin-developm-162756/562da910-122e-11ea-8323-024332e0cf6e"
+        },
+        "categories": {
+            "auth": {
+                "jaimechoferes": {}
+            }
+        }
+    }
+}
